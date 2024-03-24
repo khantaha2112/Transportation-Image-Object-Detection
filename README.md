@@ -12,6 +12,7 @@ https://github.com/khantaha2112/Transportation-Image-Object-Detection/assets/110
 ##  OUTPUT SNAPSHOTS 
 ![Test image2](https://github.com/khantaha2112/Transportation-Image-Object-Detection/assets/110721493/646731ab-b06e-499e-9527-dbac9e1bf115)
 ![Test images](https://github.com/khantaha2112/Transportation-Image-Object-Detection/assets/110721493/1ccd8767-4119-4308-8db2-cfb298351ac8)
+![Image4](https://github.com/khantaha2112/Transportation-Image-Object-Detection/assets/110721493/5711b967-8be9-4cd4-9044-a16e1aa57818)
 ![Test image3](https://github.com/khantaha2112/Transportation-Image-Object-Detection/assets/110721493/5cebc566-e251-4b07-a198-b20b2695b73b)
 
 
