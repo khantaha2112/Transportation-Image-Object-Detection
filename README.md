@@ -13,6 +13,5 @@ https://github.com/khantaha2112/Transportation-Image-Object-Detection/assets/110
 ![Test image2](https://github.com/khantaha2112/Transportation-Image-Object-Detection/assets/110721493/646731ab-b06e-499e-9527-dbac9e1bf115)
 ![Test images](https://github.com/khantaha2112/Transportation-Image-Object-Detection/assets/110721493/1ccd8767-4119-4308-8db2-cfb298351ac8)
 ![Test image3](https://github.com/khantaha2112/Transportation-Image-Object-Detection/assets/110721493/5cebc566-e251-4b07-a198-b20b2695b73b)
-![Test images](https://github.com/khantaha2112/Transportation-Image-Object-Detection/assets/110721493/c382efdb-150b-4990-bd36-4edec4af4738)
 
 
