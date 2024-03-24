@@ -1,0 +1,13 @@
+.image-display {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+.image-display div {
+    text-align: center;
+}
+.image-display img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+}

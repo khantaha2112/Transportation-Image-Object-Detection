@@ -1,0 +1,328 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transportation Image Object Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            /* margin: 0;
+            padding: 0;
+            background-image: url('video1.gif');
+            background-size: contain;
+            background-position: center;
+           */
+           
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('video1.gif');
+    background-size: 140%  135%;
+    background-position: center;
+    background-repeat:center ;
+
+           
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9); /* Adjust the opacity as needed */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .upload-form {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .upload-form input[type=file] {
+            display: none;
+        }
+
+        .upload-btn {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .upload-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .image-display {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .image-display div {
+            text-align: center;
+        }
+
+        .image-display img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <h1>Transportation Image Object Detection</h1>
+        </nav>
+
+        <form class="upload-form" onsubmit="handleImageUpload(event)">
+            <label for="imageInput" class="upload-btn">Choose Image</label>
+            <input type="file" id="imageInput" accept="image/*" />
+            <button type="submit" class="upload-btn">Upload Image</button>
+        </form>
+
+        <div id="imageDisplay" style="display: none;" class="image-display">
+            <div>
+                <h2>Original Image</h2>
+                <img id="originalImage" alt="Original" />
+            </div>
+            <div>
+                <h2>Processed Image</h2>
+                <img id="processedImage" alt="Processed" />
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function handleImageUpload(event) {
+            event.preventDefault();
+            const fileInput = document.getElementById('imageInput');
+            const originalImage = document.getElementById('originalImage');
+            const processedImage = document.getElementById('processedImage');
+
+            const file = fileInput.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+                originalImage.src = e.target.result;
+                originalImage.style.display = 'block';
+
+                // Mock processing time
+                setTimeout(() => {
+                    processedImage.src = e.target.result;
+                    processedImage.style.display = 'block';
+                }, 2000);
+            };
+
+            reader.readAsDataURL(file);
+            document.getElementById('imageDisplay').style.display = 'flex';
+        }
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transportation Image Object Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('video1.gif');
+    background-size:  100% 105%;
+    background-position: center;
+    background-repeat:center ;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: -14px auto;
+            padding: 5px;
+            background-color: rgba(255, 255, 255, 0.9); /* Adjust the opacity as needed */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .upload-form {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .upload-form input[type=file] {
+            display: none;
+        }
+
+        .upload-btn {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .upload-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .upload-btn.grey {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .image-display {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .image-display div {
+            text-align: center;
+        }
+
+        .image-display img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        #loader {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <h1>Transportation Image Object Detection</h1>
+        </nav>
+
+        <form class="upload-form" onsubmit="handleImageUpload(event)">
+            <label for="imageInput" id="chooseImage" class="upload-btn">Choose Image</label>
+            <input type="file" id="imageInput" accept="image/*" onchange="handleChooseImage(event)" />
+            <button type="submit" id="uploadImage" class="upload-btn grey" disabled>Upload Image</button>
+        </form>
+
+        <div id="loader">
+            <img src="loader.gif" alt="Loading...">
+        </div>
+
+        <div id="imageDisplay" style="display: none;" class="image-display">
+            <div>
+                <h2>Original Image</h2>
+                <img id="originalImage" alt="Original" />
+            </div>
+            <div>
+                <h2>Processed Image</h2>
+                <img id="processedImage" alt="Processed" />
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function handleChooseImage(event) {
+            const chooseImageBtn = document.getElementById('chooseImage');
+            chooseImageBtn.textContent = 'Image Chosen';
+            chooseImageBtn.classList.add('grey');
+            chooseImageBtn.disabled = true;
+
+            const uploadImageBtn = document.getElementById('uploadImage');
+            uploadImageBtn.disabled = false;
+            uploadImageBtn.classList.remove('grey');
+        }
+
+        function handleImageUpload(event) {
+            event.preventDefault();
+            const fileInput = document.getElementById('imageInput');
+            const originalImage = document.getElementById('originalImage');
+            const processedImage = document.getElementById('processedImage');
+            const loader = document.getElementById('loader');
+
+            const file = fileInput.files[0];
+        
+        // herer
+        let data = new FormData();
+        data.append('image',file)
+        const upload=fetch('http://127.0.0.1:5000/upload',{
+            method:'POST',
+            body:data
+        }).then((data)=>{
+                const res = data.json();
+                return res
+        }).then((res)=>{
+            console.log(res)
+            processedImage.src = res['processed_image']
+   
+        }).catch((err)=>{
+            console.log(err)
+            
+        });
+        // here
+        
+            const reader = new FileReader();
+            
+            reader.onload = function (e) {
+                // Show loader
+                loader.style.display = 'block';
+                originalImage.style.display = 'none';
+                processedImage.style.display = 'none';
+
+                // Mock processing time
+                setTimeout(() => {
+                    // Hide loader
+                    loader.style.display = 'none';
+
+                    // Display images
+                    originalImage.src = e.target.result;
+                    originalImage.style.display = 'block';
+                    
+                    processedImage.style.display = 'block';
+
+                    // comment all
+                    // Mock processing time
+                    // setTimeout(() => {
+                    //     processedImage.src = e.target.result;
+                        // expect style.display='block'
+                    // }, 2000); // Mock processing time of 2 seconds
+
+                }, 2000); // Loader display time of 3 seconds
+            };
+
+            reader.readAsDataURL(file);
+            document.getElementById('imageDisplay').style.display = 'flex';
+        }
+    </script>
+</body>
+</html>
